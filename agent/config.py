@@ -18,7 +18,9 @@ def get_database_url() -> str:
         separator = "&" if "?" in database_url else "?"
         database_url = f"{database_url}{separator}sslmode=require"
 
-        return database_url
+    return database_url
+
+
 
 def get_groq_api_key() -> str:
     groq_api_key = os.getenv("GROQ_API_KEY2")
