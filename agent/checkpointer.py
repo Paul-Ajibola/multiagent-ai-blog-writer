@@ -14,7 +14,7 @@ def build_checkpointer() -> PostgresSaver:
         autocommit=True,
         row_factory=dict_row,
     )
-
+    # create an instance of PostgresSaver object
     checkpointer = PostgresSaver(conn)
     checkpointer.setup()
     return checkpointer
