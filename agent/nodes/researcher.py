@@ -22,7 +22,7 @@ def tavily_search(query: str, max_results: int = 5) -> List[dict]:
                 "title": r.get("title") or "",
                 "url": r.get("url") or "",
                 "snippet": r.get("content") or r.get("snippet") or "",
-                "published_at": r.get("published_date") or rget("published_at"),
+                "published_at": r.get("published_date") or r.get("published_at"),
                 "source": r.get("source"),
 
             }
@@ -49,6 +49,7 @@ def research_node(state: State) -> dict:
                 HumanMessage(content=f"Raw Results:\n{raw_results}"),
             ]
         )
+
 
     # deduplicate by URL
     dedup = {}
