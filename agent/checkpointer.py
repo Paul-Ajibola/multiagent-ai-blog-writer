@@ -7,6 +7,8 @@ from langgraph.checkpoint.postgres import PostgresSaver
 from agent.config import DATABASE_URL
 
 
+# the checkpointer function, returns a PostgresSaver object. 
+# An instance named checkpointer in this case
 
 def build_checkpointer() -> PostgresSaver:
     conn = psycopg.connect(

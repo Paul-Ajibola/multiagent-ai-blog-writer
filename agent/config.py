@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# function to get DB url. Adds a sslmode
 def get_database_url() -> str:
     database_url = os.getenv("DATABASE_URL")
 
@@ -29,7 +30,7 @@ def get_groq_api_key() -> str:
     return groq_api_key
 
 
-
+# call functions
 DATABASE_URL = get_database_url()
 GROQ_API_KEY2 = get_groq_api_key()
 

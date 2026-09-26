@@ -9,15 +9,21 @@ from fastapi.staticfiles import StaticFiles
 from web.config import IMAGES_DIR, STATIC_DIR
 from web.routes import agent, downloads, health, pages
 
+
+# instantiate the fastapi app
 app = FastAPI(
     title="LangGraph Blog Agent",
     description="FastAPI frontend for the existing LangGraph workflow.",
     version="1.0.0"
 )
 
+
+# mounting app
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 app.mount("/images", StaticFiles(directory=IMAGES_DIR), name="images")
 
+
+# routers
 app.include_router(pages.router)
 app.include_router(health.router)
 app.include_router(agent.router)
